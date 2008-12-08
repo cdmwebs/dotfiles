@@ -1,0 +1,1 @@
+/Users/chris/dotfiles/vim-rails/autoload/rails.vim
