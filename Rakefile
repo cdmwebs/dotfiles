@@ -2,12 +2,8 @@ require 'rake'
 
 desc "install the dot files into user's home directory"
 task :install do
-  unless File.exist?("vim-rails/plugin/rails.vim")
-    puts "rails.vim not updated yet"
-    puts "    git submodule update --init"
-    puts "then run rake install again"
-    exit
-  end
+  puts "updating rails.vim submodule"
+  system %Q{git submodule update --init}
 
   replace_all = false
   Dir['*'].each do |file|
