@@ -1,1 +1,0 @@
-/Users/chris/dotfiles/vim-rails/plugin/rails.vim
