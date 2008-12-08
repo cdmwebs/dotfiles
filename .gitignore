@@ -1,0 +1,34 @@
+.DS_Store
+.CFUserTextEncoding
+.Xauthority
+.adobe/
+.autotest
+.bash_history
+.bash_logout
+.com.apple.timemachine.supported
+.cups/
+.fontconfig/
+.gitk
+.gnupg/
+.irb_history
+.lesshst
+.mysql_history
+.mythtv/
+.parallels_settings
+.psql_history
+.qt/
+.rails-plugin-sources
+.rdebug_hist
+.sqlite_history
+.subversion/
+.svk/
+.viminfo
+Desktop DB
+Desktop DF
+Desktop/
+Downloads/
+Library/
+Movies/
+Music/
+Public/
+Sites/

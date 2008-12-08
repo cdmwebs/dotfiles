@@ -1,0 +1,25 @@
+[user]
+	name = Chris Moore
+	email = cdmwebs@gmail.com
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+[alias]
+  ci = commit -a
+  co = checkout
+  st = status -a
+  br = branch
+[merge]
+	tool = vimdiff
+[core]
+	excludesfile = /Users/chrismoore/.gitignore
+[apply]
+    whitespace = strip
+[diff]
+    color = auto
+    rename = copy
+[pager]
+    color = true
+[status]
+    color = auto
