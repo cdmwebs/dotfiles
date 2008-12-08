@@ -30,7 +30,6 @@ alias ll='ls $LS_OPTIONS -lah'
 alias l='ls $LS_OPTIONS -lh'
 alias df='df -h'
 alias du='du -h --max-depth=1'
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim -p'
 
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion

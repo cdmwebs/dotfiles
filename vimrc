@@ -4,6 +4,7 @@ set nocompatible          " We're running Vim, not Vi!
 " Syntax highlighting
 " --------------------------
 syntax on 								" Enable syntax highlighting
+colorscheme railscasts
 syntax sync fromstart
 filetype plugin indent on
 
@@ -13,7 +14,6 @@ set expandtab
 set autoindent
 set shiftwidth=2 
 set softtabstop=2 
-set tabstop=2
 set autoindent smartindent
 
 " Line Wrapping
