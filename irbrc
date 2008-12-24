@@ -1,11 +1,17 @@
+require 'rubygems'
+require 'wirble'
 require 'yaml'
 require 'irb/completion'
 require 'map_by_method'
 require 'what_methods'
 require 'pp'
+require 'irb/completion'
+
+Wirble.init
+Wirble.colorize
+
 IRB.conf[:AUTO_INDENT]=true
 
-require 'irb/completion'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
 module Readline
