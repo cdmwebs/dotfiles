@@ -1,25 +1,28 @@
 [user]
-	name = Chris Moore
-	email = cdmwebs@gmail.com
+  name = Chris Moore
+  email = cdmwebs@gmail.com
 [color]
-	status = auto
-	diff = auto
-	branch = auto
+  status = auto
+  diff = auto
+  branch = auto
 [alias]
   ci = commit -a
   co = checkout
   st = status -a
   br = branch
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [core]
-	excludesfile = /Users/chrismoore/.gitignore
+  excludesfile = /Users/chrismoore/.gitignore
 [apply]
-    whitespace = strip
+  whitespace = strip
 [diff]
-    color = auto
-    rename = copy
+  color = auto
+  rename = copy
 [pager]
-    color = true
+  color = true
 [status]
-    color = auto
+  color = auto
+[github]
+  user = cdmwebs
+  token = a8092daca05034f9694eefcb252e9839
