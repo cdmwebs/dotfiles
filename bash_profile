@@ -1,6 +1,5 @@
-# MacPorts
-export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-export MANPATH="/opt/local/share/man:$MANPATH"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
 
 # Terminal colours (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines
@@ -15,6 +14,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 export TERM=xterm-color
 
 EDITOR=/usr/bin/vim; export EDITOR
@@ -34,5 +34,3 @@ alias du='du -h --max-depth=1'
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
 fi
-
-export PYTHONPATH=/opt/local/lib/python2.5/site-packages
