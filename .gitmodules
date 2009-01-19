@@ -1,3 +1,6 @@
 [submodule "vim-rails"]
 	path = vim-rails
 	url = git://github.com/tpope/vim-rails.git
+[submodule "vim-autoclose"]
+	path = vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git

@@ -26,7 +26,7 @@ if has("gui_running")
   hi link htmlTagName                 xmlTagName
   hi link htmlEndTag                  xmlEndTag
 
-  highlight Normal                    guifg=#E6E1DC   guibg=#2B2B2B
+  highlight Normal                    guifg=#E6E1DC   guibg=#1A1A1A
   highlight Cursor                    guifg=#000000   guibg=#FFFFFF
   "highlight CursorLine               guibg=#323300
  

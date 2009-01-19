@@ -4,7 +4,16 @@ set nocompatible          " We're running Vim, not Vi!
 " Syntax highlighting
 " --------------------------
 syntax on 					  " Enable syntax highlighting
-colorscheme railscasts
+
+if has('gui_running')
+  colorscheme railscasts
+else
+  colorscheme desert
+endif 
+
+hi clear LineNr
+highlight LineNr                    guifg=#666666   guibg=#1A1A1A
+
 syntax sync fromstart
 filetype plugin indent on
 
