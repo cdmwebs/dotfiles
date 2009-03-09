@@ -34,3 +34,8 @@ alias du='du -h --max-depth=1'
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
 fi
+
+# don't require rubygems!
+# http://gist.github.com/54177
+RUBYOPT="rubygems"
+export RUBYOPT
