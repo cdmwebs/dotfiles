@@ -1,0 +1,1 @@
+/Users/chris/dotfiles/vim-autoclose/doc/autoclose.txt

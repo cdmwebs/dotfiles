@@ -5,14 +5,7 @@ set nocompatible          " We're running Vim, not Vi!
 " --------------------------
 syntax on 					  " Enable syntax highlighting
 
-if has('gui_running')
-  colorscheme railscasts
-else
-  colorscheme desert
-endif 
-
-hi clear LineNr
-highlight LineNr                    guifg=#666666   guibg=#1A1A1A
+colorscheme desert
 
 syntax sync fromstart
 filetype plugin indent on
@@ -34,17 +27,19 @@ set linebreak                                     " Wrap at word
 set incsearch							" incremental searching
 set hlsearch							" highlight search results
 set ignorecase						" case insensitive searching
+
+" Toggle search results with spacebar
 map <Space> :set hlsearch!<cr>
 
 " Cursor (crosshairs)
 "set cursorline
 "set cursorcolumn
 
-" Swapfiles
+" Swapfiles. Fuck 'em.
 set nobackup
 set noswapfile
 
-" Split windows
+" Split windows behavior
 set splitbelow
 set splitright
 

@@ -4,3 +4,6 @@
 [submodule "vim-autoclose"]
 	path = vim-autoclose
 	url = git://github.com/Townk/vim-autoclose.git
+[submodule "vim-cucumber"]
+	path = vim-cucumber
+	url = git://github.com/tpope/vim-cucumber.git

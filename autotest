@@ -1,3 +1,32 @@
-require 'autotest/growl'
 require 'autotest/redgreen'
 require 'autotest/timestamp'
+
+# -*- ruby -*-
+
+module Autotest::Growl
+  def self.growl title, msg, pri = 0, img = nil 
+    #title += " at #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}"
+    msg += " in #{Dir.pwd.split(/\//).last(3).join("/")}"
+    # TODO: parameterize default image
+    img ||= "/Applications/Mail.app/Contents/Resources/Caution.tiff"
+    cmd = "growlnotify -w -n autotest --image #{img} -p #{pri} -m #{msg.inspect} #{title}"
+    system cmd 
+    nil 
+  end 
+
+  Autotest.add_hook :initialize do  |at|
+    growl "Started", "Autotest Running", 0, "~/Library/autotest_images/pass.png"
+  end 
+
+  Autotest.add_hook :red do |at|
+    growl "Tests Failed", "#{at.files_to_test.size} tests failed", 2, "~/Library/autotest_images/fail.png"
+  end 
+
+  Autotest.add_hook :green do |at|
+    growl "Tests Passed", "Tests passed", -2, "~/Library/autotest_images/pass.png" if at.tainted
+  end 
+
+  Autotest.add_hook :all_good do |at|
+    growl "Tests Passed", "All tests passed", -2, "~/Library/autotest_images/pass.png" if at.tainted
+  end 
+end
