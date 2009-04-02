@@ -31,6 +31,9 @@ set ignorecase						" case insensitive searching
 " Toggle search results with spacebar
 map <Space> :set hlsearch!<cr>
 
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
 " Cursor (crosshairs)
 "set cursorline
 "set cursorcolumn
