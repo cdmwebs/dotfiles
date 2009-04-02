@@ -63,7 +63,8 @@ set shortmess=atI
 set ruler
 set undolevels=100
 set laststatus=2
-set number ruler
+" turning off line numbers for now
+"set number
 set showmatch
 
 " Only do this part when compiled with support for autocommands.
