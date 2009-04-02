@@ -4,6 +4,9 @@ set nocompatible          " We're running Vim, not Vi!
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" keep more history
+set history=100
+
 " Syntax highlighting
 " --------------------------
 " Switch syntax highlighting on, when the terminal has colors
@@ -17,6 +20,9 @@ endif
 
 " map leader to comma
 let mapleader = ","
+
+" where am i?
+set cursorline
 
 " Indentation and Tab handling
 set smarttab
@@ -62,7 +68,6 @@ set shortmess=atI
 
 set ruler
 set undolevels=100
-set laststatus=2
 " turning off line numbers for now
 "set number
 set showmatch
@@ -119,7 +124,7 @@ augroup END
 
 " Status line configuration (from tomasr)
 " ---------------------------------------
-set ls=2 " Always show status line
+set laststatus=2 " Always show status line
 if has('statusline')
    " Status line detail:
    " %f    file path
