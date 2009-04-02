@@ -7,7 +7,7 @@ let &columns = g:halfsize
 
 " Font
 set guifont=Monaco:h10.00
- 
+
 " Use console dialogs
 set guioptions+=c
 
@@ -16,6 +16,9 @@ set go+=T
 
 " turns the toolbar off
 "set go-=T
+
+" add a cursorline
+set cursorline
 
 " w00t
 colorscheme vividchalk

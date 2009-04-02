@@ -21,9 +21,6 @@ endif
 " map leader to comma
 let mapleader = ","
 
-" where am i?
-set cursorline
-
 " Indentation and Tab handling
 set smarttab
 set expandtab
@@ -34,7 +31,7 @@ set autoindent smartindent
 
 " Line Wrapping
 set nowrap
-set linebreak                                     " Wrap at word
+set linebreak             " Wrap at word
 
 " Search results
 set incsearch							" incremental searching
@@ -46,6 +43,10 @@ map <Space> :set hlsearch!<cr>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
+
+" catch trailing whitespace
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
 
 " Cursor (crosshairs)
 "set cursorline
