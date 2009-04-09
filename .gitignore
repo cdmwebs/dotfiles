@@ -1,2 +1,5 @@
-vim/**/*
-vim/*
+# ignore most vim stuff, since it's mostly plugins
+vim/**
+
+# include vim/colors directory
+!vim/colors
