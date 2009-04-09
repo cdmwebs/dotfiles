@@ -15,7 +15,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   " sync syntax from the start of the file
   syntax sync fromstart
   set hlsearch
-  colorscheme desert
+  " colorscheme desert
 endif
 
 " map leader to comma

@@ -1,5 +1,5 @@
 # Macports, if it's installed
-if [ -f /opt ]; then
+if [ -d /opt ]; then
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   export MANPATH=/opt/local/share/man:$MANPATH
 fi
