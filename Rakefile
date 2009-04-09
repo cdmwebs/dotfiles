@@ -35,6 +35,9 @@ task :install do
     system %Q{ln -s "$PWD/git-vimscript-installer/Rakefile" "#{dir}/Rakefile"}
     system %Q{cd "$PWD/#{dir}" && rake install && cd ..}
   end
+
+  # rails.vim includes it's own rake task
+  system %Q{cd "$PWD/vim-rails" && rake install && cd ..}
 end
 
 def replace_file(file)
