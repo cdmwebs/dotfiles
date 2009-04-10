@@ -48,6 +48,9 @@ map Q gq
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
+" pretty up json files
+map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
+
 " Cursor (crosshairs)
 "set cursorline
 "set cursorcolumn

@@ -1,5 +1,8 @@
 # ignore most vim stuff, since it's mostly plugins
+vim/**/*
 vim/**
 
-# include vim/colors directory
+# include specific vim folder items
 !vim/colors
+!vim/ftdetect/json.vim
+!vim/syntax/json.vim
