@@ -16,3 +16,6 @@
 [submodule "vim-ruby"]
 	path = vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim-nerdtree"]
+	path = vim-nerdtree
+	url = git://github.com/scrooloose/nerdtree.git

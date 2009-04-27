@@ -6,7 +6,7 @@ task :install do
 
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README LICENSE git-vimscript-installer vim-autoclose vim-cucumber vim-rails vim-surround vim-ruby].include? file
+    next if %w[Rakefile README LICENSE git-vimscript-installer vim-autoclose vim-cucumber vim-nerdtree vim-rails vim-surround vim-ruby].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
@@ -31,7 +31,7 @@ task :install do
   end
 
   # Vim plugins
-  %w[vim-autoclose vim-cucumber vim-surround vim-ruby].each do |dir|
+  %w[vim-autoclose vim-cucumber vim-nerdtree vim-surround vim-ruby].each do |dir|
     system %Q{ln -s "$PWD/git-vimscript-installer/Rakefile" "#{dir}/Rakefile"}
     system %Q{cd "$PWD/#{dir}" && rake install && cd ..}
   end
