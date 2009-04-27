@@ -113,7 +113,8 @@ if has("folding")
   set foldlevel=1
   set foldnestmax=2
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
- 
+  set foldcolumn=4
+
   " automatically open folds at the starting cursor position
   " autocmd BufReadPost .foldo!
 endif
