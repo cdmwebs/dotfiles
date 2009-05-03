@@ -51,6 +51,10 @@ nmap <silent> <leader>s :set nolist!<CR>
 " pretty up json files
 map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
 
+" quickly toggle paste modes
+map <leader>p <Esc>:set paste<CR>
+map <leader>pp <Esc>:set nopaste<CR>
+
 " Cursor (crosshairs)
 "set cursorline
 "set cursorcolumn
@@ -110,7 +114,7 @@ endif " has("autocmd")
 if has("folding")
   set foldenable
   set foldmethod=syntax
-  set foldlevel=1
+  set foldlevel=3
   set foldnestmax=2
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
   set foldcolumn=4

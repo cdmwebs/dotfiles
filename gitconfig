@@ -13,7 +13,7 @@
 [merge]
   tool = vimdiff
 [core]
-  excludesfile = /Users/chrismoore/.gitignore
+  excludesfile = /Users/chris/.gitignore
 [apply]
   whitespace = strip
 [diff]
