@@ -17,8 +17,12 @@ if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
   eval `dircolors ~/.dir_colors`
 
   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
+  alias du='du -h --max-depth=1'
 else
   PS1='\u@\h:\w\$ '
+
+  alias du='du -h -d 1'
+  export LS_OPTIONS=''
 fi
 
 export TERM=xterm-color
@@ -35,7 +39,6 @@ alias ls='ls $LS_OPTIONS -hF'
 alias ll='ls $LS_OPTIONS -lah'
 alias l='ls $LS_OPTIONS -lh'
 alias df='df -h'
-alias du='du -h --max-depth=1'
 
 # Use bash completion, if it's available
 if [ -f /opt/local/etc/bash_completion ]; then
