@@ -4,6 +4,14 @@ if [ -d /opt ]; then
   export MANPATH=/opt/local/share/man:$MANPATH
 fi
 
+if [ -d /usr/local/mysql/bin/ ]; then
+  export PATH=/usr/local/mysql/bin/:$PATH
+fi
+
+export MAGICK_HOME=$HOME/src/ImageMagick-6.5.0
+export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
+export PATH="$MAGICK_HOME/bin:/usr/sbin:$PATH"
+
 # coreutils ls instead of OS X
 if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
   # Terminal colours (after installing GNU coreutils)
@@ -19,10 +27,21 @@ if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
   alias du='du -h --max-depth=1'
 else
-  PS1='\u@\h:\w\$ '
+  #PS1='\u@\h:\w\$ '
+  
+  parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  }
+
+  git_status() {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+  }
+  
+  # Colored
+  export PS1='\[\e[1;32m\]\u \[\e[0m\]\w $(parse_git_branch)\[\e[0m\]\$ '
 
   alias du='du -h -d 1'
-  export LS_OPTIONS=''
+  export LS_OPTIONS='-G'
 fi
 
 export TERM=xterm-color
