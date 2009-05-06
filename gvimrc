@@ -21,9 +21,10 @@ set go+=T
 set cursorline
 
 " w00t
-colorscheme vividchalk
 set bg=dark
 if &background == "dark"
     hi normal guibg=black
     set transp=8
 endif
+
+colorscheme railscasts
