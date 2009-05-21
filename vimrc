@@ -15,7 +15,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   " sync syntax from the start of the file
   syntax sync fromstart
   set hlsearch
-  " colorscheme desert
+  colorscheme elflord
 endif
 
 " map leader to comma
@@ -93,19 +93,26 @@ if has("autocmd")
  
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
- 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
- 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \ exe "normal g`\"" |
-    \ endif
- 
+    autocmd!
+   
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+   
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \ exe "normal g`\"" |
+      \ endif
+  augroup END
+
+  augroup myfiletypes
+    " Clear old autocmds in group
+    autocmd!
+    " autoindent with two spaces, always expand tabs
+    autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+    autocmd FileType javascript set ai sw=4 sts=4 et
   augroup END
 else
   set autoindent    " always set autoindenting on
@@ -117,7 +124,7 @@ if has("folding")
   set foldlevel=3
   set foldnestmax=2
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-  set foldcolumn=4
+  set foldcolumn=0
 
   " automatically open folds at the starting cursor position
   " autocmd BufReadPost .foldo!
@@ -125,13 +132,6 @@ endif
 
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
-
-augroup myfiletypes
-  " Clear old autocmds in group
-  autocmd!
-  " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
-augroup END
 
 " Status line configuration (from tomasr)
 " ---------------------------------------
