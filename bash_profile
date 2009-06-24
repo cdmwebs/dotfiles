@@ -8,6 +8,10 @@ if [ -d /usr/local/mysql/bin/ ]; then
   export PATH=/usr/local/mysql/bin/:$PATH
 fi
 
+if [ -d /opt/local/lib/postgresql83/bin ]; then
+  export PATH=/opt/local/lib/postgresql83/bin:$PATH
+fi
+
 export MAGICK_HOME=$HOME/src/ImageMagick-6.5.0
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 export PATH="$MAGICK_HOME/bin:/usr/sbin:$PATH"
@@ -62,6 +66,7 @@ alias df='df -h'
 # Use bash completion, if it's available
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
+  . /usr/local/git/contrib/completion/git-completion.bash
 fi
 
 # don't require rubygems!
