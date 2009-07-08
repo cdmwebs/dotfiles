@@ -14,7 +14,7 @@ fi
 
 export MAGICK_HOME=$HOME/src/ImageMagick-6.5.0
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
-export PATH="$MAGICK_HOME/bin:/usr/sbin:$PATH"
+export PATH="$MAGICK_HOME/bin:/usr/sbin:/usr/local/bin:/Library/PostgreSQL/8.4/bin:$PATH"
 
 # coreutils ls instead of OS X
 if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
