@@ -10,9 +10,6 @@
 [submodule "vim-surround"]
 	path = vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "git-vimscript-installer"]
-	path = git-vimscript-installer
-	url = git://github.com/travisjeffery/git-vimscript-installer.git
 [submodule "vim-ruby"]
 	path = vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
