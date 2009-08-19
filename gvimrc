@@ -14,6 +14,9 @@ set guioptions+=c
 " turns the toolbar on
 set go+=T
 
+" tab labels
+set guitablabel=%t
+
 " turns the toolbar off
 "set go-=T
 
