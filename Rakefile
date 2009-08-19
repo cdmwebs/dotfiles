@@ -6,7 +6,8 @@ task :install do
 
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README LICENSE git-vimscript-installer vim-autoclose vim-cucumber vim-nerdtree vim-rails vim-surround vim-ruby].include? file
+    next if %w[Rakefile README README.textile LICENSE git-vimscript-installer vim-autoclose vim-cucumber 
+	       vim-nerdtree vim-rails vim-surround vim-ruby].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
