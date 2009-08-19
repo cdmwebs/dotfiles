@@ -1,12 +1,14 @@
 require 'rake'
 
+@excluded = %w[Rakefile README README.textile LICENSE]
+@replace_all = false
+
 desc "install the dot files into user's home directory"
 task :install do
   system %Q{git submodule update --init}
 
-  @replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README README.textile LICENSE].include?(file) || File.directory?(file)
+    next if @excluded.include?(file) || File.directory?(file)
     
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if @replace_all
@@ -19,14 +21,27 @@ task :install do
     end
   end
 
-  # NERDtree gotta be all cool
-  system %Q{cd "$PWD/vim-nerdtree" && rake deploy_local & cd ..}
-
   # Vim plugins by tpope
   %w[vim-autoclose vim-cucumber vim-surround vim-rails vim-ruby].each do |dir|
     system %Q{cd "$PWD/#{dir}" && rake install && cd ..}
   end
+
+  # NERDtree gotta be all cool
+  system %Q{cd "$PWD/vim-nerdtree" && rake deploy_local & cd ..}
 end
+
+desc "remove the symlinks in $HOME"
+task :uninstall do
+  Dir['*'].each do |file|
+    if File.exist?(File.join(ENV['HOME'], ".#{file}"))
+      if @replace_all || ask?(file)
+        puts "removing ~/.#{file}"
+        system %Q{rm -r #{File.join(ENV['HOME'], ".#{file}") }} 
+      end
+    end
+  end
+end
+
 
 def replace_file(file)
   system %Q{rm "$HOME/.#{file}"}
