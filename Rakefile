@@ -5,29 +5,35 @@ require 'rake'
 
 desc "install the dot files into user's home directory"
 task :install do
-  system %Q{git submodule update --init}
-
   Dir['*'].each do |file|
     next if @excluded.include?(file) || File.directory?(file)
     
-    if File.exist?(File.join(ENV['HOME'], ".#{file}"))
-      if @replace_all
-        replace_file(file)
-      else
-        replace_file(file) if ask?(file)
-      end
+    if File.exist?(File.join(ENV['HOME'], ".#{file}"))	
+      replace_file(file) if @replace_file
+			replace_file(file) if ask?(file)
     else
       link_file(file)
     end
   end
 
+  link_file('vim')
+
   # Vim plugins by tpope
   %w[vim-autoclose vim-cucumber vim-surround vim-rails vim-ruby].each do |dir|
-    system %Q{cd "$PWD/#{dir}" && rake install && cd ..}
+    puts "installing #{dir}"
+    system %Q{cp -f git-vimscript-installer/Rakefile #{dir}/Rakefile && cd #{dir} && rake install && cd ..}
   end
 
   # NERDtree gotta be all cool
   system %Q{cd "$PWD/vim-nerdtree" && rake deploy_local & cd ..}
+end
+
+desc "update the bundled git repos"
+task :update do
+  %w[vim-autoclose vim-cucumber vim-surround vim-rails vim-ruby].each do |dir|
+    puts "updating #{dir}"
+    system %Q{cd #{dir} && rake update}
+  end
 end
 
 desc "remove the symlinks in $HOME"

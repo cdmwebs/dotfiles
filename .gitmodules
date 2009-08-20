@@ -16,3 +16,6 @@
 [submodule "vim-nerdtree"]
 	path = vim-nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "git-vimscript-installer"]
+	path = git-vimscript-installer
+	url = git://github.com/travisjeffery/git-vimscript-installer.git
