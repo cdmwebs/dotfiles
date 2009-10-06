@@ -1,22 +1,34 @@
-# Macports, if it's installed
-if [ -d /opt ]; then
-  export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-  export MANPATH="/opt/local/share/man:$MANPATH"
+if [ -d /usr/local/pgsql/bin ]; then
+  export PATH="/usr/local/pgsql/bin:$PATH"
 fi
 
-if [ -d /usr/local/mysql/bin/ ]; then
+if [ -d /usr/local/mysql/bin ]; then
   export PATH="/usr/local/mysql/bin/:$PATH"
-fi
-
-if [ -d /opt/local/lib/postgresql83/bin ]; then
-  export PATH="/opt/local/lib/postgresql83/bin:$PATH"
-elif [ -d /Library/PostgreSQL/8.4/bin ]; then
-  export PATH="/Library/PostgreSQL/8.4/bin:$PATH"
 fi
 
 export MAGICK_HOME="$HOME/src/ImageMagick-6.5.0"
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 export PATH="$MAGICK_HOME/bin:/usr/local/bin:$PATH"
+export TERM=xterm-color
+
+EDITOR=/usr/bin/vim; export EDITOR
+SVN_EDITOR="$EDITOR --nofork"; export SVN_EDITOR
+
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+export HISTCONTROL=ignoredups
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Use bash completion, if it's available
+if [ -f /opt/local/etc/bash_completion ]; then
+	. /opt/local/etc/bash_completion
+  . /usr/local/git/contrib/completion/git-completion.bash
+fi
+
+# don't require rubygems!
+# http://gist.github.com/54177
+RUBYOPT="rubygems"
 
 # coreutils ls instead of OS X
 if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
@@ -33,8 +45,6 @@ if [[ "$TERM" != "dumb" && -f /opt/local/bin/ls ]]; then
   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
   alias du='du -h --max-depth=1'
 else
-  #PS1='\u@\h:\w\$ '
-  
   parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
   }
@@ -50,28 +60,10 @@ else
   export LS_OPTIONS='-G'
 fi
 
-export TERM=xterm-color
-
-EDITOR=/usr/bin/vim; export EDITOR
-SVN_EDITOR="$EDITOR --nofork"; export SVN_EDITOR
-
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-export HISTCONTROL=ignoredups
+export RUBYOPT
 
 # Aliases
-alias ls='ls $LS_OPTIONS -hF'
-alias ll='ls $LS_OPTIONS -lah'
-alias l='ls $LS_OPTIONS -lh'
+alias ls='ls -hF $LS_OPTIONS'
+alias ll='ls -lah $LS_OPTIONS'
+alias l='ls -lh $LS_OPTIONS'
 alias df='df -h'
-
-# Use bash completion, if it's available
-if [ -f /opt/local/etc/bash_completion ]; then
-	. /opt/local/etc/bash_completion
-  . /usr/local/git/contrib/completion/git-completion.bash
-fi
-
-# don't require rubygems!
-# http://gist.github.com/54177
-RUBYOPT="rubygems"
-export RUBYOPT
