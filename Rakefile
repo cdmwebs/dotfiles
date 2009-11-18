@@ -19,9 +19,14 @@ task :install do
   link_file('vim')
 
   # Vim plugins by tpope
+  %w[vim-autoclose vim-cucumber vim-ruby].each do |dir|
+    system %Q{cp -f git-vimscript-installer/Rakefile #{dir}/Rakefile}
+  end
+
+  # Vim plugins by tpope
   %w[vim-autoclose vim-cucumber vim-surround vim-rails vim-ruby].each do |dir|
     puts "installing #{dir}"
-    system %Q{cp -f git-vimscript-installer/Rakefile #{dir}/Rakefile && cd #{dir} && rake install && cd ..}
+    system %Q{cd #{dir} && rake install && cd ..}
   end
 
   # NERDtree gotta be all cool

@@ -28,4 +28,4 @@
   user = cdmwebs
   token = a8092daca05034f9694eefcb252e9839
 [push]
-	default = current
+  default = current

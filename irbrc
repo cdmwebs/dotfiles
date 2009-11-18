@@ -1,5 +1,6 @@
 require 'wirble'
 require 'pp'
+require 'hirb'
 
 Wirble.init
 Wirble.colorize

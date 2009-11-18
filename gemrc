@@ -1,11 +1,15 @@
 --- 
-:verbose: true
-gem: --no-ri
-:sources: 
-- http://gems.rubyforge.org
-- http://gems.github.com
+gemhome: /Users/cdmwebs/.gem
+gempath:
+- /Users/cdmwebs/.gem/ruby/1.8
+- /usr/lib/ruby/gems/1.8
+- /Library/Ruby/Gems/1.8
 :benchmark: false
+:verbose: true
 :update_sources: true
-:bulk_threshold: 1000
+:sources: 
+- http://gemcutter.org
 :backtrace: false
+:bulk_threshold: 1000
+gem: --no-ri
 rdoc: --inline-source --line-numbers --format=html --template=hanna
