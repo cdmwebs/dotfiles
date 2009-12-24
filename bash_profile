@@ -24,7 +24,7 @@ git_status() {
 }
 
 # Colored
-export PS1='\[\e[1;32m\]\u \[\e[0m\]\w $(parse_git_branch)\[\e[0m\]\$ '
+export PS1='\[\e[1;32m\]\u@\h \[\e[0m\]\w $(parse_git_branch)\[\e[0m\]\$ '
 export LS_OPTIONS='-G'
 
 # Aliases
