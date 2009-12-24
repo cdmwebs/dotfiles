@@ -1,3 +1,4 @@
+set -o vi
 export TERM=xterm-color
 EDITOR=/usr/bin/vim; export EDITOR
 SVN_EDITOR="$EDITOR --nofork"; export SVN_EDITOR
@@ -24,7 +25,6 @@ git_status() {
 
 # Colored
 export PS1='\[\e[1;32m\]\u \[\e[0m\]\w $(parse_git_branch)\[\e[0m\]\$ '
-
 export LS_OPTIONS='-G'
 
 # Aliases
@@ -34,9 +34,9 @@ alias l='ls -lh $LS_OPTIONS'
 alias df='df -h'
 alias du='du -h -d 1'
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-. /opt/local/etc/bash_completion
-. /usr/local/git//contrib/completion/git-completion.bash
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 export S3_KEY="1NYJYNXDGW4KT4VB8PR2"
 export S3_SECRET="qsH8fyBZLs+ZbsHJWPacxH18L/Zka2yxLTJXzZ0W"
