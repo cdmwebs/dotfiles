@@ -19,3 +19,9 @@
 [submodule "git-vimscript-installer"]
 	path = git-vimscript-installer
 	url = git://github.com/travisjeffery/git-vimscript-installer.git
+[submodule "vim-endwise"]
+	path = vim-endwise
+	url = git://github.com/tpope/vim-endwise.git
+[submodule "vim-haml"]
+	path = vim-haml
+	url = git://github.com/tpope/vim-haml.git
