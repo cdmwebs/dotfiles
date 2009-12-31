@@ -11,9 +11,9 @@ export HISTCONTROL=ignoredups
 # http://gist.github.com/54177
 export RUBYOPT="rubygems"
 
-export PATH=~/bin:~/.gem/bin:/usr/local/pgsql/bin:$PATH
-export GEM_HOME=~/.gem
-export GEM_PATH=~/.gem:/usr/lib/ruby/gems/1.8:/Library/Ruby/Gems/1.8
+export PATH=$HOME/bin:$HOME/.gem/ruby/1.8/bin:$PATH
+#export GEM_HOME=~/.gem
+#export GEM_PATH=~/.gem:/usr/lib/ruby/gems/1.8:/Library/Ruby/Gems/1.8
 
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
