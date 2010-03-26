@@ -8,7 +8,7 @@
 [alias]
   ci = commit -a
   co = checkout
-  st = status -a
+  st = status
   br = branch
   llog = log --date=local
 [merge]
