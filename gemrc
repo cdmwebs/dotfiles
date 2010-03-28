@@ -1,9 +1,4 @@
 --- 
-gemhome: /Users/cdmwebs/.gem
-gempath:
-- /Users/cdmwebs/.gem/ruby/1.8
-- /usr/lib/ruby/gems/1.8
-- /Library/Ruby/Gems/1.8
 :benchmark: false
 :verbose: true
 :update_sources: true
