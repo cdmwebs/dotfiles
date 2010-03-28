@@ -41,3 +41,5 @@ fi
 export S3_KEY="1NYJYNXDGW4KT4VB8PR2"
 export S3_SECRET="qsH8fyBZLs+ZbsHJWPacxH18L/Zka2yxLTJXzZ0W"
 export S3_BUCKET="bb-development"
+
+if [[ -s /Users/cdmwebs/.rvm/scripts/rvm ]] ; then source /Users/cdmwebs/.rvm/scripts/rvm ; fi
