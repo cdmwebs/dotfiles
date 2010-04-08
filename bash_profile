@@ -11,7 +11,7 @@ export HISTCONTROL=ignoredups
 # http://gist.github.com/54177
 export RUBYOPT="rubygems"
 
-export PATH=$HOME/bin:$HOME/.gem/ruby/1.8/bin:$PATH
+export PATH=$HOME/bin:$PATH
 #export GEM_HOME=~/.gem
 #export GEM_PATH=~/.gem:/usr/lib/ruby/gems/1.8:/Library/Ruby/Gems/1.8
 
@@ -42,4 +42,15 @@ export S3_KEY="1NYJYNXDGW4KT4VB8PR2"
 export S3_SECRET="qsH8fyBZLs+ZbsHJWPacxH18L/Zka2yxLTJXzZ0W"
 export S3_BUCKET="bb-development"
 
+export PGDATA="/usr/local/var/postgres"
+
 if [[ -s /Users/cdmwebs/.rvm/scripts/rvm ]] ; then source /Users/cdmwebs/.rvm/scripts/rvm ; fi
+
+# Get and set the current heroku account
+function hset() {
+  ln -nfs ~/.heroku/credentials.$1 ~/.heroku/credentials
+}
+
+function hget() {
+  readlink ~/.heroku/credentials | awk -F . '{print $NF}'
+}
