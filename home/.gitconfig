@@ -11,6 +11,7 @@
   st = status
   br = branch
   llog = log --date=local
+  tree = log --graph --oneline --all
 [merge]
   tool = vimdiff
 [core]
