@@ -1,3 +1,4 @@
 require 'autotest/fsevent'
 require 'autotest/growl'
 require 'autotest/timestamp'
+require 'autotest/rails'
