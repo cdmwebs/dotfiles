@@ -1,7 +1,7 @@
 set -o vi
 
 export TERM=xterm-color
-export EDITOR=/usr/bin/vim
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR="$EDITOR --nofork"
 
 export GREP_OPTIONS='--color=auto'
@@ -16,14 +16,16 @@ export PGDATA="/usr/local/var/postgres"
 export RUBYOPT="rubygems"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+  source `brew --prefix`/etc/bash_completion;
 fi
 
-export S3_KEY="1NYJYNXDGW4KT4VB8PR2"
-export S3_SECRET="qsH8fyBZLs+ZbsHJWPacxH18L/Zka2yxLTJXzZ0W"
-export S3_BUCKET="bb-development"
+if [[ -s /Users/cdmwebs/.rvm/scripts/rvm ]]; then 
+  source /Users/cdmwebs/.rvm/scripts/rvm ;
+fi
 
-if [[ -s /Users/cdmwebs/.rvm/scripts/rvm ]] ; then source /Users/cdmwebs/.rvm/scripts/rvm ; fi
+if [ -f ~/.s3_keys ]; then
+  source ~/.s3_keys;
+fi
 
 # Git prompt
 # http://henrik.nyh.se/2008/12/git-dirty-prompt
@@ -145,6 +147,9 @@ alias ll='ls -lah $LS_OPTIONS'
 alias l='ls -lh $LS_OPTIONS'
 alias df='df -h'
 alias du='du -h -d 1'
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Get and set the current heroku account
 function hset() {
