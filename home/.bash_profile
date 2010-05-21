@@ -1,7 +1,6 @@
 set -o vi
 
 export TERM=xterm-color
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export SVN_EDITOR="$EDITOR --nofork"
 
 export GREP_OPTIONS='--color=auto'
@@ -15,13 +14,7 @@ export PGDATA="/usr/local/var/postgres"
 # http://gist.github.com/54177
 export RUBYOPT="rubygems"
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  source `brew --prefix`/etc/bash_completion;
-fi
-
-if [[ -s /Users/cdmwebs/.rvm/scripts/rvm ]]; then 
-  source /Users/cdmwebs/.rvm/scripts/rvm ;
-fi
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 if [ -f ~/.s3_keys ]; then
   source ~/.s3_keys;
@@ -147,7 +140,6 @@ alias ll='ls -lah $LS_OPTIONS'
 alias l='ls -lh $LS_OPTIONS'
 alias df='df -h'
 alias du='du -h -d 1'
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias ..='cd ..'
 alias ...='cd ../..'
 
@@ -159,3 +151,15 @@ function hset() {
 function hget() {
   readlink ~/.heroku/credentials | awk -F . '{print $NF}'
 }
+
+# OS specifics
+os=$(uname)
+if [[ "$os" = 'Linux' ]]; then
+  export EDITOR=vim
+elif [[ "$os" = 'Darwin' ]]; then
+  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+    source `brew --prefix`/etc/bash_completion;
+  fi
+fi
