@@ -14,7 +14,10 @@ export PGDATA="/usr/local/var/postgres"
 # http://gist.github.com/54177
 export RUBYOPT="rubygems"
 
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then 
+  source "$HOME/.rvm/scripts/rvm";
+  [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
+fi
 
 if [ -f ~/.s3_keys ]; then
   source ~/.s3_keys;
