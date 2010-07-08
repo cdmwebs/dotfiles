@@ -141,7 +141,9 @@ alias df='df -h'
 alias du='du -h -d 1'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias start_mongo="mongod run --config /usr/local/Cellar/mongodb/1.4.2-x86_64/mongod.conf"
+
+# Local Aliases
+[[ -f $HOME/.bash_aliases ]] && source "$HOME/.bash_aliases"
 
 # Get and set the current heroku account
 function hset() {
