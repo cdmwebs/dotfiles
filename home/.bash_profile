@@ -10,10 +10,6 @@ export LS_OPTIONS='-G'
 export PATH=$HOME/bin:$PATH
 export PGDATA="/usr/local/var/postgres"
 
-# don't require rubygems!
-# http://gist.github.com/54177
-export RUBYOPT="rubygems"
-
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then 
   source "$HOME/.rvm/scripts/rvm";
   [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
@@ -145,6 +141,7 @@ alias df='df -h'
 alias du='du -h -d 1'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias start_mongo="mongod run --config /usr/local/Cellar/mongodb/1.4.2-x86_64/mongod.conf"
 
 # Get and set the current heroku account
 function hset() {
