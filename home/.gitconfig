@@ -8,7 +8,7 @@
 [alias]
   ci = commit -a
   co = checkout
-  st = status
+  st = status -s
   br = branch
   llog = log --date=local
   tree = log --graph --oneline --all
