@@ -156,17 +156,54 @@ function hget() {
 
 # OS specifics
 os=$(uname)
+
 if [[ "$os" = 'Linux' ]]; then
   export EDITOR=vim
 elif [[ "$os" = 'Darwin' ]]; then
-  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+  export EDITOR=/usr/local/bin/mvim
+  alias vim=/usr/local/bin/vim
   if [ -f `brew --prefix`/etc/bash_completion ]; then
     source `brew --prefix`/etc/bash_completion;
   fi
 fi
 export GEM_EDITOR=$EDITOR
+export CATALINA_HOME=/usr/local/apache-tomcat-6.0.29
 
-export M2_HOME=/usr/local/apache-maven-2.2.1
-export M2=$M2_HOME/bin
-export PATH=$M2:$PATH
+# detect interactive shell
+case "$-" in
+    *i*) INTERACTIVE=yes ;;
+    *)   unset INTERACTIVE ;;
+esac
+
+# detect login shell
+case "$0" in
+    -*) LOGIN=yes ;;
+    *)  unset LOGIN ;;
+esac
+
+test -n "$INTERACTIVE" -a -n "$LOGIN" && {
+    uname -npsr
+    uptime
+}
+
+
+# --------------------------------------------------------------------
+# MISC COMMANDS
+# --------------------------------------------------------------------
+
+# push SSH public key to another box
+push_ssh_cert() {
+    local _host
+    test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa
+    for _host in "$@";
+    do
+        echo $_host
+        ssh $_host 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+    done
+}
+
+# open an ssh tunnel
+# tunnel user@host.name
+tunnel () {
+  ssh -D 8080 -f -C -q -N $1
+}
