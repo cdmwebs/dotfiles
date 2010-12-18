@@ -1,23 +1,12 @@
 set -o vi
 
 export TERM=xterm-color
-export SVN_EDITOR="$EDITOR --nofork"
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 export HISTCONTROL=ignoredups
 export LS_OPTIONS='-G'
-export PATH=$HOME/bin:$PATH
-export PGDATA="/usr/local/var/postgres"
-
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then 
-  source "$HOME/.rvm/scripts/rvm";
-  [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
-fi
-
-if [ -f ~/.s3_keys ]; then
-  source ~/.s3_keys;
-fi
+[[ -s "$HOME/bin" ]] && export PATH=$HOME/bin:$PATH
 
 # Git prompt
 # http://henrik.nyh.se/2008/12/git-dirty-prompt
@@ -133,17 +122,12 @@ GIT_PS1_SHOWDIRTYSTATE=1
 # prompt with git status
 PS1="\[\e[1;32m\]\u@\h\[\e[0m\]:\w\[\e[33m\]\`__git_ps1\`\[\e[0m\]\\$ "
 
-# Aliases
-alias ls='ls -hF $LS_OPTIONS'
-alias ll='ls -lah $LS_OPTIONS'
-alias l='ls -lh $LS_OPTIONS'
-alias df='df -h'
-alias du='du -h -d 1'
-alias ..='cd ..'
-alias ...='cd ../..'
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
 
-# Local Aliases
-[[ -f $HOME/.bash_aliases ]] && source "$HOME/.bash_aliases"
+# Any S3 keys?
+[[ -s "$HOME/.s3_keys" ]] && . "$HOME/.s3_keys"
 
 # Get and set the current heroku account
 function hset() {
@@ -162,10 +146,25 @@ if [[ "$os" = 'Linux' ]]; then
 elif [[ "$os" = 'Darwin' ]]; then
   export EDITOR=/usr/local/bin/mvim
   alias vim=/usr/local/bin/vim
-  if [ -f `brew --prefix`/etc/bash_completion ]; then
-    source `brew --prefix`/etc/bash_completion;
-  fi
+  export PGDATA="/usr/local/var/postgres"
+  [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
+  [[ -s `brew --prefix`/bin/gls ]] && export LS_OPTIONS='--color=auto'
+  export PATH=/usr/local/share/npm/bin:$PATH
 fi
+
+# Aliases
+alias ls='gls -hF $LS_OPTIONS'
+alias ll='gls -lah $LS_OPTIONS'
+alias l='gls -lh $LS_OPTIONS'
+alias df='df -h'
+alias du='du -h -d 1'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Local Aliases
+[[ -f $HOME/.bash_aliases ]] && source "$HOME/.bash_aliases"
+
+export SVN_EDITOR="$EDITOR --nofork"
 export GEM_EDITOR=$EDITOR
 export CATALINA_HOME=/usr/local/apache-tomcat-6.0.29
 
@@ -190,17 +189,6 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # --------------------------------------------------------------------
 # MISC COMMANDS
 # --------------------------------------------------------------------
-
-# push SSH public key to another box
-push_ssh_cert() {
-    local _host
-    test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa
-    for _host in "$@";
-    do
-        echo $_host
-        ssh $_host 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
-    done
-}
 
 # open an ssh tunnel
 # tunnel user@host.name

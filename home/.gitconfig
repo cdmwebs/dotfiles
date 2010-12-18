@@ -17,7 +17,7 @@
 [core]
   excludesfile = /Users/chris/.gitignore
 [apply]
-  whitespace = strip
+	whitespace = nowarn
 [diff]
   color = auto
   rename = copy
@@ -30,3 +30,5 @@
   token = a8092daca05034f9694eefcb252e9839
 [push]
   default = current
+[rerere]
+	enabled = 1
