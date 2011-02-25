@@ -17,7 +17,7 @@ end
 
 begin
   require 'hirb'
-  #Hirb.enable
+  Hirb.enable
 rescue LoadError => err
   warn "Couldn't load hirb: #{err}"
 end
@@ -28,8 +28,8 @@ IRB.conf[:EVAL_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history" 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
-if ENV['RAILS_ENV'] && File.exists?(File.dirname(__FILE__) + '/.railsrc')
-  load File.dirname(__FILE__) + '/.railsrc' 
+if ENV['RAILS_ENV'] && File.exists?(File.join(Dir.pwd, '.railsrc'))
+  load File.join(Dir.pwd, '.railsrc')
 end
 
 # Log to STDOUT if in Rails
