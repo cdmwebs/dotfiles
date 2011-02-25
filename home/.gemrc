@@ -7,5 +7,5 @@ gem: --no-rdoc
 - http://gems.github.com
 :backtrace: false
 :verbose: true
-rdoc: --inline-source --line-numbers --format=html --template=hanna
+rdoc: --inline-source --line-numbers
 :benchmark: false
