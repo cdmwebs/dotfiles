@@ -32,3 +32,10 @@
   default = current
 [rerere]
 	enabled = 1
+[heroku]
+	account = 26webs
+[mergetool "vimdiff3"]
+	cmd = vim -f -d \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "macvim"]
+	cmd = mvim -d -g \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+	trustExitCode = false
