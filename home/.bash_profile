@@ -153,9 +153,9 @@ elif [[ "$os" = 'Darwin' ]]; then
 fi
 
 # Aliases
-alias ls='gls -hF $LS_OPTIONS'
-alias ll='gls -lah $LS_OPTIONS'
-alias l='gls -lh $LS_OPTIONS'
+alias ls='ls -hF $LS_OPTIONS'
+alias ll='ls -lah $LS_OPTIONS'
+alias l='ls -lh $LS_OPTIONS'
 alias df='df -h'
 alias du='du -h -d 1'
 alias ..='cd ..'
