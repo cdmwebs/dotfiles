@@ -17,8 +17,8 @@ export BASH_THEME='cdmwebs'
 export GIT_HOSTING='git@git.domain.com'
 
 # Set my editor and git editor
-export EDITOR=`brew --prefix`/bin/mvim
-export GIT_EDITOR=`brew --prefix`/bin/vim
+export EDITOR=vim
+export GIT_EDITOR=vim
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
