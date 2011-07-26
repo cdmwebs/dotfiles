@@ -1,3 +1,0 @@
-[submodule "home/.bash-it"]
-	path = home/.bash-it
-	url = git@github.com:cdmwebs/bash-it.git
