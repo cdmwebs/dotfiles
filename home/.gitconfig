@@ -1,10 +1,11 @@
 [user]
-  name = Chris Moore
+	name = Chris Moore
   email = cdmwebs@gmail.com
 [color]
   status = auto
   diff = auto
   branch = auto
+  ui = auto
 [alias]
   ci = commit -a
   co = checkout
@@ -12,10 +13,12 @@
   br = branch
   llog = log --date=local
   tree = log --graph --oneline --all
+  slog = log --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset %ar %s'
+  swog = log --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
 [merge]
   tool = vimdiff
 [core]
-  excludesfile = /Users/chris/.gitignore
+  excludesfile = /Users/cdmwebs/.gitignore
 [apply]
 	whitespace = nowarn
 [diff]
@@ -30,12 +33,5 @@
   token = a8092daca05034f9694eefcb252e9839
 [push]
   default = current
-[rerere]
-	enabled = 1
-[heroku]
-	account = 26webs
-[mergetool "vimdiff3"]
-	cmd = vim -f -d \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-[mergetool "macvim"]
-	cmd = mvim -d -g \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
-	trustExitCode = false
+[daemon]
+  receivepack = true
