@@ -1,3 +1,5 @@
+ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
+
 require 'rubygems' rescue nil
 require 'irb/completion'
 require 'irb/ext/save-history'
@@ -28,7 +30,11 @@ IRB.conf[:EVAL_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history" 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
-if ENV['RAILS_ENV'] && File.exists?(File.join(Dir.pwd, '.railsrc'))
+# Aliases
+alias :q :exit
+
+if File.exists?(File.join(Dir.pwd, '.railsrc'))
+  puts 'loading .railsrc'
   load File.join(Dir.pwd, '.railsrc')
 end
 
@@ -52,7 +58,7 @@ end
 
 # We can also define convenient methods (credits go to thoughtbot)
 def me
-  User.find_by_email("cdmwebs@gmail.com")
+  User.find_by_email("cdmwebs@gmail.com") || User.find_by_email('chris@26webs.com')
 end
 
 def pb(string)
