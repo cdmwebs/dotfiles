@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export BASH=$HOME/.bash_it
+export BASH=$HOME/.bash-it
 export BASH_THEME='pete'
 
 export EDITOR="/usr/local/bin/vim"
