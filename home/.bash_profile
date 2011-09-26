@@ -12,5 +12,5 @@ export IRC_CLIENT='irssi'
 # Load Bash It
 source $BASH/bash_it.sh
 
-export PATH="./bin:$HOME/.rbenv/bin:$PATH"
+export PATH="./bin:$HOME/.rbenv/bin:$HOME/bin:$PATH"
 eval "$(rbenv init -)"
