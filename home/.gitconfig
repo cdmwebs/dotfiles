@@ -15,6 +15,9 @@
   tree = log --graph --oneline --all
   slog = log --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset %ar %s'
   swog = log --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+  pend = cherry -v origin/master
+  us   = cherry -v origin/staging
+  new  = cherry -v staging origin/staging
 [merge]
   tool = vimdiff
 [core]
