@@ -18,10 +18,16 @@
   pend = cherry -v origin/master
   us   = cherry -v origin/staging
   new  = cherry -v staging origin/staging
+  r = !git l -20
+  ra = !git r --all
+  l = log --graph --abbrev-commit --date=relative
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   tool = vimdiff
 [core]
   excludesfile = /Users/cdmwebs/.gitignore
+	quotepath = false
 [apply]
 	whitespace = nowarn
 [diff]
@@ -38,3 +44,5 @@
   default = current
 [daemon]
   receivepack = true
+[init]
+	templatedir = ~/.git_template
