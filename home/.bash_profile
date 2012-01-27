@@ -25,3 +25,8 @@ alias t='todo.sh'
 
 export LESS="-R"
 export HISTCONTROL=ignoreboth
+
+# iTerm2 eating C-s
+stty -ixoff
+stty stop undef
+stty start undef
