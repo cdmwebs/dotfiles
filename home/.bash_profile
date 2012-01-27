@@ -3,6 +3,8 @@
 export BASH=$HOME/.bash-it
 export BASH_THEME='cdmwebs'
 
+export TODO_DIR="$HOME/Dropbox/todo"
+
 export EDITOR="/usr/local/bin/vim"
 export GIT_EDITOR='/usr/local/bin/vim'
 
@@ -19,6 +21,7 @@ export PATH="./bin:$PATH"
 # Save for later
 # if [ `w | grep $LOGNAME | awk '{print $3}'` != "-" ]; then echo "remote"; fi
 alias droid="say 'droid' -v cellos"
+alias t='todo.sh'
 
 export LESS="-R"
 export HISTCONTROL=ignoreboth
