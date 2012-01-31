@@ -1,5 +1,5 @@
 [user]
-	name = Chris Moore
+  name = Chris Moore
   email = cdmwebs@gmail.com
 [color]
   status = auto
@@ -21,15 +21,17 @@
   r = !git l -20
   ra = !git r --all
   l = log --graph --abbrev-commit --date=relative
+  ll = log --stat --abbrev-commit
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   tool = vimdiff
 [core]
-  excludesfile = /Users/cdmwebs/.gitignore
-	quotepath = false
+  excludesfile = ~/.gitignore
+  quotepath = false
+  pager = less -FRSX
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [diff]
   color = auto
   rename = copy
@@ -40,4 +42,4 @@
 [push]
   default = current
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
