@@ -14,14 +14,12 @@ begin
   Wirble.init
   Wirble.colorize
 rescue LoadError => err
-  warn "Couldn't load wirble: #{err}"
 end
 
 begin
   require 'hirb'
   Hirb.enable
 rescue LoadError => err
-  warn "Couldn't load hirb: #{err}"
 end
 
 IRB.conf[:AUTO_INDENT]  = true
