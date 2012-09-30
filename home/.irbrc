@@ -39,7 +39,7 @@ end
 # Log to STDOUT if in Rails
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
   require 'logger'
-  #RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
   #IRB.conf[:USE_READLINE] = true
 
   # Display the RAILS ENV in the prompt
