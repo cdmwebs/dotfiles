@@ -22,6 +22,7 @@
   ra = !git r --all
   l = log --graph --abbrev-commit --date=relative
   ll = log --stat --abbrev-commit
+  standup = log --since yesterday --oneline --author Chris
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
