@@ -1,8 +1,5 @@
 #!/bin/bash
 
-export BASH=$HOME/.bash-it
-export BASH_THEME='cdmwebs'
-
 export EDITOR="vim"
 export GIT_EDITOR='vim'
 
@@ -11,10 +8,7 @@ export IRC_CLIENT='irssi'
 
 # Load cinderella
 source $HOME/Developer/cinderella.profile
-
-# Load Bash It
-source $BASH/bash_it.sh
-export PATH="./bin:$PATH"
+export PATH=./bin:$PATH
 
 # Save for later
 # if [ `w | grep $LOGNAME | awk '{print $3}'` != "-" ]; then echo "remote"; fi
