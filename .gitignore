@@ -6,3 +6,5 @@ vim/**
 !vim/colors
 !vim/ftdetect/json.vim
 !vim/syntax/json.vim
+
+/home/.js/*.js

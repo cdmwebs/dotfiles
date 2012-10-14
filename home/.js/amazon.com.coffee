@@ -1,0 +1,2 @@
+jQuery ->
+  jQuery('#twotabsearchtextbox').focus()
