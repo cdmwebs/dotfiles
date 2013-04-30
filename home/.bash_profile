@@ -29,7 +29,7 @@ alias ll='ls -lah'
 alias q='exit'
 alias reload='source $HOME/.bash_profile'
 
-alias e='mvim . &'
+alias e='mvim --remote-tab-silent .'
 alias edit='mvim '
 alias gd='git diff | mvim'
 alias gs='git status'
@@ -48,10 +48,10 @@ alias cwip="cucumber -p wip features/"
 [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
 
 hitch() {
-  RBENV_VERSION=1.9.2-p290 command hitch "$@"
+  RBENV_VERSION=1.9.3-p125 command hitch "$@"
   if [[ -s "$HOME/.hitch_export_authors" ]]; then source "$HOME/.hitch_export_authors" ; fi
 }
-alias unhitch='RBENV_VERSION=1.9.2-p290 hitch -u'
+alias unhitch='RBENV_VERSION=1.9.3-p125 hitch -u'
 
 # Uncomment to persist pair info between terminal instances
 # hitch
