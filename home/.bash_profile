@@ -77,5 +77,14 @@ function check_git_changes {
   # tput setaf 1 = RED, tput setaf 2 = GREEN
   [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
 }
-
 export PS1="\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY $ "
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+function rbenv_install {
+  CONFIGURE_OPTS="--disable-install-doc --with-readline-dir=$(brew --prefix readline)"
+  echo $CONFIGURE_OPTS
+  rbenv install $1
+}
+
