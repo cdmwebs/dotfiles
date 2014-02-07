@@ -31,11 +31,6 @@ IRB.conf[:PROMPT_MODE]  = :SIMPLE
 # Aliases
 alias :q :exit
 
-if File.exists?(File.join(Dir.pwd, '.railsrc'))
-  puts 'loading .railsrc'
-  load File.join(Dir.pwd, '.railsrc')
-end
-
 # Log to STDOUT if in Rails
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
   require 'logger'
@@ -82,3 +77,13 @@ def routing_tools(host = 'example.com')
   default_url_options[:host] = host
   ActionController::Routing::Routes
 end
+
+if File.exists?(File.join(Dir.pwd, '.railsrc'))
+  puts 'loading .railsrc'
+  load File.join(Dir.pwd, '.railsrc')
+end
+
+def y(object)
+  puts object.to_yaml
+end
+
