@@ -26,6 +26,8 @@ if window.location.pathname == '/2.6/ledger.html' || window.location.pathname ==
     color: '#11CC00'
     font: '14px/22px Inconsolota, Menlo'
     borderRadius: '3px'
+    maxWidth: '100%'
+    overflow: 'scroll'
 
   $('h1, h2, h3, h4, h5').css
     textShadow: '1px 1px 1px #ccc'
