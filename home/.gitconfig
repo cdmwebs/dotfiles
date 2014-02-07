@@ -27,6 +27,7 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   tool = vimdiff
+  log = true
 [core]
   excludesfile = ~/.gitignore
   quotepath = false
@@ -44,3 +45,6 @@
   default = current
 [init]
   templatedir = ~/.git_template
+[credential]
+	helper = cache
+
