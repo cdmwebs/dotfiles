@@ -1,15 +1,13 @@
 #!/bin/bash
 
+source /opt/boxen/env.sh
+
 export EDITOR="vim"
 export GIT_EDITOR='vim'
 export CLICOLOR=1
 
 unset MAILCHECK
 export IRC_CLIENT='irssi'
-
-# Load cinderella
-source $HOME/Developer/cinderella.profile
-export PATH=./bin:/usr/local/heroku/bin:$PATH
 
 # Save for later
 # if [ `w | grep $LOGNAME | awk '{print $3}'` != "-" ]; then echo "remote"; fi
@@ -47,7 +45,9 @@ alias duo='du -rsh $(du -s * | sort -k1n | ruby -nae '\''puts '\$'F[1..-1].join(
 alias heroky=heroku
 alias cwip="cucumber -p wip features/"
 
-[[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 hitch() {
   RBENV_VERSION=1.9.3-p125 command hitch "$@"
@@ -55,13 +55,8 @@ hitch() {
 }
 alias unhitch='RBENV_VERSION=1.9.3-p125 hitch -u'
 
-# Uncomment to persist pair info between terminal instances
-# hitch
-
-### Added by the Heroku Toolbelt
-
 eval "$(hub alias -s)"
 
 source ~/.git_bash_prompt
-. `brew --prefix`/etc/profile.d/z.sh
+export PATH=./bin:/usr/local/heroku/bin:$PATH
 
