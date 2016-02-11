@@ -44,5 +44,5 @@ alias duo='du -rsh $(du -s * | sort -k1n | ruby -nae '\''puts '\$'F[1..-1].join(
 alias heroky=heroku
 alias gst="git status"
 
-#source ~/.git_bash_prompt
+source ~/.git_bash_prompt
 
