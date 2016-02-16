@@ -32,6 +32,7 @@
   excludesfile = ~/.gitignore
   quotepath = false
 	pager = less -FRX
+	editor = /usr/local/bin/vim
 [apply]
   whitespace = nowarn
 [diff]
