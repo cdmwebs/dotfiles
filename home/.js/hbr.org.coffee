@@ -1,2 +1,0 @@
-jQuery('fancybox-overlay').remove()
-
