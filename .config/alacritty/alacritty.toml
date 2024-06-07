@@ -1,0 +1,54 @@
+# import = ["~/.config/alacritty/alacritty-theme/themes/catppuccin-mocha.toml"]
+# import = ["~/.config/alacritty/alacritty-theme/themes/smooooooth.toml"]
+# import = ["~/.config/alacritty/alacritty-theme/themes/tokyo-night-storm.toml"]
+# import = ["~/.config/alacritty/alacritty-theme/themes/rose-pine-moon.toml"]
+import = ["~/.config/alacritty/alacritty-theme/themes/dracula.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "Buttonless"
+dynamic_title = true
+dynamic_padding = true
+padding.x = 10
+padding.y = 10
+
+opacity = 0.90
+blur = true
+
+option_as_alt = "Both"
+
+[scrolling]
+history = 100000
+multiplier = 6
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[selection]
+save_to_clipboard = true
+
+[font]
+size = 12
+
+[font.bold]
+family = "SauceCodePro Nerd Font Mono"
+style = "Heavy"
+
+[font.bold_italic]
+family = "SauceCodePro Nerd Font Mono"
+style = "Heavy Italic"
+
+[font.italic]
+family = "SauceCodePro Nerd Font Mono"
+style = "Medium Italic"
+
+[font.normal]
+family = "SauceCodePro Nerd Font Mono"
+style = "Medium"
+
+[mouse]
+hide_when_typing = true
+
+
