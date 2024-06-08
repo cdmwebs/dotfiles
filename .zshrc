@@ -1,3 +1,5 @@
+export CLICOLOR=1
+
 ZINIT_HOME=${HOME}/.zsh/zinit
 source ${ZINIT_HOME}/zinit.zsh
 
