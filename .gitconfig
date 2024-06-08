@@ -1,0 +1,25 @@
+[user]
+	name = Chris Moore
+	email = chris@knowndecimal.com
+	signingkey = 5AE02E7B737414E51D5D905945194E0484FD5328
+[core]
+	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[pull]
+	rebase = true
+[alias]
+	co = checkout
+	br = branch
+	st = status
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
