@@ -44,3 +44,5 @@ fi
 
 export GPG_TTY=$(tty)
 eval "$(fzf --zsh)"
+
+. ${HOME}/.asdf/asdf.sh
