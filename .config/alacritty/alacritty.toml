@@ -2,7 +2,8 @@
 # import = ["~/.config/alacritty/alacritty-theme/themes/smooooooth.toml"]
 # import = ["~/.config/alacritty/alacritty-theme/themes/tokyo-night-storm.toml"]
 # import = ["~/.config/alacritty/alacritty-theme/themes/rose-pine-moon.toml"]
-import = ["~/.config/alacritty/alacritty-theme/themes/dracula.toml"]
+# import = ["~/.config/alacritty/alacritty-theme/themes/dracula.toml"]
+import = ["~/.config/alacritty/alacritty-theme/themes/gruvbox_dark.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -50,5 +51,3 @@ style = "Medium"
 
 [mouse]
 hide_when_typing = true
-
-
