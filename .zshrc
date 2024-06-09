@@ -9,7 +9,9 @@ zinit load agkozak/zsh-z
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+source ${HOME}/.p10k.zsh
 
 autoload -U compinit && compinit
 
@@ -44,4 +46,5 @@ fi
 export GPG_TTY=$(tty)
 eval "$(fzf --zsh)"
 
+fpath=(${ASDF_DIR}/completions $fpath)
 . ${HOME}/.asdf/asdf.sh
